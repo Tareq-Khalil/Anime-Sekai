@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 80px;
+}
+nav {
+    background-color: #1c1c1c;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+.nav-links li {
+    margin-left: 20px;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.search-bar input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+.search-bar input:focus {
+    width: 300px;
+}
+.search-bar button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #f0ad4e;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.search-bar button:hover {
+    background-color: #ec971f;
+}
+.search-bar button:focus {
+    outline: 2px solid #f0ad4e;
+}
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.autocomplete-item {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.autocomplete-item:hover {
+    background-color: #f0ad4e;
+    color: #fff;
+}
+.autocomplete-active {
+    background-color: #f0ad4e !important;
+    color: white;
+}
+header {
+    text-align: center;
+    padding: 50px;
+    background-color: #e0e0e0;
+    margin-bottom: 20px;
+}
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+header p {
+    font-size: 1.2em;
+}
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-around;
+    margin: 20px;
+}
+.anime-box {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+.anime-box img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+.anime-box h2,
+.anime-box h3 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #333;
+}
+.anime-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+footer {
+    background-color: #1c1c1c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.menu-icon {
+    cursor: pointer;
+    display: inline-block; 
+  }
+  .bar {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+  }
+  .side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  .side-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  .side-menu a:hover {
+    background-color: #575757;
+  }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 36px;
+  }
+  .side-menu.active {
+    width: 250px;
+  }
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+    }
+    .search-bar input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .search-bar button {
+        width: 100%;
+    }
+    .anime-box h2 {
+        font-size: 1.2em;
+    }
+}
